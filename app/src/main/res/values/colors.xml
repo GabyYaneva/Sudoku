@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light theme -->
+    <color name="light_background">#FFFFFF</color>
+    <color name="light_accent">#ADD8E6</color>
+    <color name="light_error">#FFCDD2</color>
+    <color name="light_text">#141428</color>
+    <color name="light_surface">#F5F5F5</color>
+
+    <!-- Dark theme -->
+    <color name="dark_background">#1A1A2E</color>
+    <color name="dark_accent">#0F3460</color>
+    <color name="dark_error">#8B3A00</color>
+    <color name="dark_text">#D5D5D5</color>
+    <color name="dark_surface">#16213E</color>
+
+    <!-- Common -->
+    <color name="orange_error">#FF6D00</color>
+    <color name="blue_player">#1565C0</color>
+</resources>

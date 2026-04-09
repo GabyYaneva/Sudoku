@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_background">
+
+    <!-- Top bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <!-- Row 1: Mistakes + Timer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tvMistakes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mistakes: 0/3"
+                android:fontFamily="@font/fredoka_regular"
+                android:textSize="16sp"
+                android:textColor="@color/light_text"
+                android:gravity="start"/>
+
+            <TextView
+                android:id="@+id/tvTimer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="00:00"
+                android:fontFamily="@font/fredoka_regular"
+                android:textSize="16sp"
+                android:textColor="@color/light_text"
+                android:gravity="end"/>
+
+        </LinearLayout>
+
+        <!-- Row 2: Exit button -->
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="4dp"
+            android:text="Exit Game"
+            android:fontFamily="@font/fredoka_regular"
+            android:textSize="14sp"
+            android:textColor="@color/light_text"
+            android:backgroundTint="@color/light_surface"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
+
+    </LinearLayout>
+
+    <!-- Loading indicator -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <!-- Sudoku Board — takes all remaining space -->
+    <com.example.sudoku.view.SudokuBoardView
+        android:id="@+id/sudokuBoard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="5dp"/>
+
+
+    <!-- Action Bar — directly below board -->
+    <LinearLayout
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:gravity="center"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/btnUndo"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_undo"
+                android:contentDescription="Undo"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Undo"
+                android:fontFamily="@font/fredoka_regular"
+                android:textSize="12sp"
+                android:textColor="@color/light_text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/btnErase"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_eraser"
+                android:contentDescription="Erase"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Erase"
+                android:fontFamily="@font/fredoka_regular"
+                android:textSize="12sp"
+                android:textColor="@color/light_text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/btnNotes"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_pencil"
+                android:contentDescription="Notes"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notes"
+                android:fontFamily="@font/fredoka_regular"
+                android:textSize="12sp"
+                android:textColor="@color/light_text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/btnHint"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_bulb"
+                android:contentDescription="Hint"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hint"
+                android:fontFamily="@font/fredoka_regular"
+                android:textSize="12sp"
+                android:textColor="@color/light_text"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Number Panel — at the very bottom -->
+    <LinearLayout
+        android:id="@+id/numberPanel"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:weightSum="9"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="8dp"
+        android:layout_margin="5dp">
+
+        <Button android:id="@+id/btn1" style="@style/NumberButton" android:text="1"/>
+        <Button android:id="@+id/btn2" style="@style/NumberButton" android:text="2"/>
+        <Button android:id="@+id/btn3" style="@style/NumberButton" android:text="3"/>
+        <Button android:id="@+id/btn4" style="@style/NumberButton" android:text="4"/>
+        <Button android:id="@+id/btn5" style="@style/NumberButton" android:text="5"/>
+        <Button android:id="@+id/btn6" style="@style/NumberButton" android:text="6"/>
+        <Button android:id="@+id/btn7" style="@style/NumberButton" android:text="7"/>
+        <Button android:id="@+id/btn8" style="@style/NumberButton" android:text="8"/>
+        <Button android:id="@+id/btn9" style="@style/NumberButton" android:text="9"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Sudoku</string>
+    <string name="new_game">New Game</string>
+    <string name="continue_game">Continue</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="mistakes">Mistakes</string>
+    <string name="hint">Hint</string>
+    <string name="notes">Notes</string>
+    <string name="erase">Erase</string>
+    <string name="undo">Undo</string>
+    <string name="game_over">Game Over</string>
+    <string name="you_win">You Win!</string>
+    <string name="play_again">Play Again</string>
+    <string name="new_game_btn">New Game</string>
+    <string name="time">Time</string>
+</resources>
